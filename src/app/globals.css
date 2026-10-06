@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-crimson: #B3122B;
+  --color-crimson-deep: #7A0C1E;
+  --color-crimson-light: #D8324A;
+  --color-gold: #E2B04A;
+  --color-gold-light: #F6DC95;
+  --color-gold-dark: #B88A2E;
+  --color-cream: #FFF6E5;
+  --color-ink: #3A0A12;
+
+  --font-script: var(--font-great-vibes);
+  --font-formal: var(--font-cinzel);
+  --font-body: var(--font-cormorant);
+  --font-arabic: var(--font-amiri);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --crimson:       #B3122B;
+  --crimson-deep:  #7A0C1E;
+  --crimson-light: #D8324A;
+  --gold:          #E2B04A;
+  --gold-light:    #F6DC95;
+  --gold-dark:     #B88A2E;
+  --cream:         #FFF6E5;
+  --ink:           #3A0A12;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body), serif;
+  overflow-x: hidden;
+}
+
+/* Utilities */
+.text-gold-gradient {
+  background: linear-gradient(to right, var(--gold-dark), var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold));
+}
+
+/* Safe area padding for mobile */
+.safe-pb {
+  padding-bottom: env(safe-area-inset-bottom);
 }
